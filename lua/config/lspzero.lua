@@ -1,4 +1,5 @@
 local lsp = require('lspconfig')
+local utils = require('utils')
 
 return function()
   local lzero = require('lsp-zero').preset({})
@@ -6,6 +7,10 @@ return function()
     -- see :help lsp-zero-keybindings
     -- to learn the available actions
     lzero.default_keymaps({buffer = bufnr})
+    utils.map('n', 'gq', function ()
+      vim.lsp.buf.format({async = false, timeout_ms = 10000})
+    end)
+    utils.map('n', 'g?', vim.lsp.buf.code_action)
   end)
 
   lsp.lua_ls.setup(lzero.nvim_lua_ls())
