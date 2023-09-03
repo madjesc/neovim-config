@@ -1,38 +1,41 @@
 -- Bootstrap the lazy package manager
 vim.opt.rtp:prepend(vim.fn.stdpath("data") .. "/lazy/lazy.nvim")
 require('lazy').setup({
-  { 'nvim-tree/nvim-web-devicons',     dependencies = { 'uga-rosa/utf8.nvim' }, config = require('config.devicons') },
-  { 'nvim-treesitter/nvim-treesitter', config = require('config.treesitter') },
-  { 'ibhagwan/fzf-lua',                config = require('config.fzf') },
-  { 'nvim-tree/nvim-tree.lua',         config = require('config.nvim-tree') },
+    { 'nvim-tree/nvim-web-devicons',     dependencies = { 'uga-rosa/utf8.nvim' }, config = require('config.devicons') },
+    { 'nvim-treesitter/nvim-treesitter', config = require('config.treesitter') },
+    { 'nvim-telescope/telescope.nvim', dependencies = { 'nvim-lua/plenary.nvim' }, config = require('config.telescope') },
 
-  --[[ LSP Plugins ]]
-  {
-    'neovim/nvim-lspconfig',
-    dependencies = {
-      {
-        'hrsh7th/nvim-cmp',
+
+    -- { 'ibhagwan/fzf-lua',                config = require('config.fzf') },
+    { 'nvim-tree/nvim-tree.lua', config = require('config.nvim-tree') },
+
+    --[[ LSP Plugins ]]
+    {
+        'neovim/nvim-lspconfig',
         dependencies = {
-          'hrsh7th/cmp-nvim-lsp',
-          'hrsh7th/cmp-buffer',
-          'hrsh7th/cmp-path',
-          { 'L3MON4D3/LuaSnip', build = 'make install_jsregexp' },
+            {
+                'hrsh7th/nvim-cmp',
+                dependencies = {
+                    'hrsh7th/cmp-nvim-lsp',
+                    'hrsh7th/cmp-buffer',
+                    'hrsh7th/cmp-path',
+                    { 'L3MON4D3/LuaSnip', build = 'make install_jsregexp' },
+                },
+                config = require('config.cmp')
+            },
         },
-        config = require('config.cmp')
-      },
+        config = require('config.lspconfig')
     },
-    config = require('config.lspconfig')
-  },
 
-  --[[ Colorscheme plugins ]]
-  'sainnhe/gruvbox-material',
-  'sainnhe/everforest',
-  'sainnhe/sonokai',
-  'sainnhe/edge',
-  'Mofiqul/vscode.nvim',
-  'marko-cerovac/material.nvim',
-  'ChristianChiarulli/nvcode-color-schemes.vim',
-  'xero/miasma.nvim',
+    --[[ Colorscheme plugins ]]
+    'sainnhe/gruvbox-material',
+    'sainnhe/everforest',
+    'sainnhe/sonokai',
+    'sainnhe/edge',
+    'Mofiqul/vscode.nvim',
+    'marko-cerovac/material.nvim',
+    'ChristianChiarulli/nvcode-color-schemes.vim',
+    'xero/miasma.nvim',
 }, require('config.lazy'))
 
 -- Nvim extras
@@ -43,9 +46,9 @@ vim.opt.foldmethod = 'indent'
 
 -- Configure the colorschemes on nvim
 vim.opt.termguicolors = true
-vim.cmd 'colorscheme material-darker'
+vim.cmd 'colorscheme nvcode'
 
 -- Indentation config
-vim.opt.tabstop = 2
-vim.opt.shiftwidth = 2
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
