@@ -6,7 +6,7 @@ return function()
   lsp.html.setup(require('config.lsp.html'))
   lsp.emmet_ls.setup(require('config.lsp.emmet_ls'))
   lsp.lua_ls.setup(require('config.lsp.lua_ls'))
-  lsp.phpactor.setup {}
+  lsp.phpactor.setup(require('config.lsp.phpactor'))
   lsp.cssls.setup {}
   lsp.jsonls.setup {}
 
