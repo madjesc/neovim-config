@@ -1,15 +1,19 @@
 -- Bootstrap the lazy package manager
 vim.opt.rtp:prepend(vim.fn.stdpath("data") .. "/lazy/lazy.nvim")
 require('lazy').setup({
-    { 'nvim-tree/nvim-web-devicons',     dependencies = { 'uga-rosa/utf8.nvim' },    config = require('config.devicons') },
+    { 'nvim-tree/nvim-web-devicons',     dependencies = { 'uga-rosa/utf8.nvim' }, config = require('config.devicons') },
     { 'nvim-treesitter/nvim-treesitter', config = require('config.treesitter') },
-    { 'nvim-telescope/telescope.nvim',   dependencies = { 'nvim-lua/plenary.nvim' }, config = require('config.telescope') },
-    { 'lewis6991/gitsigns.nvim', config = require('config.gitsigns') },
-    -- { 'f-person/git-blame.nvim',         config = require('config.blame') },
-
-
-    -- { 'ibhagwan/fzf-lua',                config = require('config.fzf') },
+    { 'ibhagwan/fzf-lua',                config = require('config.fzf') },
+    { 'lewis6991/gitsigns.nvim',         config = require('config.gitsigns') },
     { 'nvim-tree/nvim-tree.lua',         config = require('config.nvim-tree') },
+    {
+        "kristijanhusak/vim-dadbod-ui",
+        dependencies = {
+            "tpope/vim-dadbod",
+            "kristijanhusak/vim-dadbod-completion",
+        },
+        config = require('config.dadbod')
+    },
 
     --[[ LSP Plugins ]]
     {
@@ -38,7 +42,7 @@ require('lazy').setup({
     'marko-cerovac/material.nvim',
     'ChristianChiarulli/nvcode-color-schemes.vim',
     'xero/miasma.nvim',
----@diagnostic disable-next-line: different-requires
+    ---@diagnostic disable-next-line: different-requires
 }, require('config.lazy'))
 
 -- Nvim extras
