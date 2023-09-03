@@ -8,21 +8,20 @@ require('lazy').setup({
 
   --[[ LSP Plugins ]]
   {
-    'williamboman/mason.nvim',
-    dependencies = { 'williamboman/mason-lspconfig.nvim', },
-    config = require('config.mason')
-  },
-  {
-    'VonHeikemen/lsp-zero.nvim',
+    'neovim/nvim-lspconfig',
     dependencies = {
-      'neovim/nvim-lspconfig',
-      'hrsh7th/nvim-cmp',
-      'hrsh7th/cmp-nvim-lsp',
-      'hrsh7th/cmp-buffer',
-      'hrsh7th/cmp-path',
-      { 'L3MON4D3/LuaSnip', build = 'make install_jsregexp' },
+      {
+        'hrsh7th/nvim-cmp',
+        dependencies = {
+          'hrsh7th/cmp-nvim-lsp',
+          'hrsh7th/cmp-buffer',
+          'hrsh7th/cmp-path',
+          { 'L3MON4D3/LuaSnip', build = 'make install_jsregexp' },
+        },
+        config = require('config.cmp')
+      },
     },
-    config = require('config.lspzero')
+    config = require('config.lspconfig')
   },
 
   --[[ Colorscheme plugins ]]
