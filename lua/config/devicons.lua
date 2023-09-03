@@ -378,6 +378,21 @@ return function()
       color = "#31B53E",
       name = "C_Sharp"
     },
+    ["kts"] = {
+      icon = icon("kotlin"),
+      color = "#51a0cf",
+      name = "Kotlin"
+    },
+    ["pro"] = {
+      icon = icon("gear"),
+      color = "#31B53E",
+      name = "Gear"
+    },
+    ["xml"] = {
+      icon = icon("code"),
+      color = "#cc3e44",
+      name = "XML"
+    },
   }
 
   devicons.set_default_icon(icon("file"), "#6d8086")
