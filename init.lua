@@ -22,7 +22,25 @@ require('lazy').setup({
     'sainnhe/everforest',
     'sainnhe/sonokai',
     'sainnhe/edge',
-	})
+    'Mofiqul/vscode.nvim',
+    'marko-cerovac/material.nvim',
+    'ChristianChiarulli/nvcode-color-schemes.vim',
+    'xero/miasma.nvim',
+	}, {
+    install = {
+      -- install missing plugins on startup. This doesn't increase startup time.
+      missing = true,
+      -- try to load one of these colorschemes when starting an installation during startup
+      colorscheme = { "habamax" },
+    },
+    ui = {
+      border = 'none',
+      icons = {
+
+      },
+
+    }
+  })
 
 -- Nvim extras
 vim.opt.number = true
