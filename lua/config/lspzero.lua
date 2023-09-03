@@ -8,8 +8,9 @@ return function()
     lzero.default_keymaps({buffer = bufnr})
   end)
 
-  -- (Optional) Configure lua language server for neovim
   lsp.lua_ls.setup(lzero.nvim_lua_ls())
+  -- lsp.phpactor.setup({})
+  -- lsp.psalm.setup({})
   lzero.setup()
 
   local cmp = require('cmp')

@@ -5,14 +5,21 @@
   "cmp-path": { "branch": "main", "commit": "91ff86cd9c29299a64f968ebb45846c485725f23" },
   "edge": { "branch": "master", "commit": "358cb6688ac577470a4eafcb53bdd63899dfc937" },
   "everforest": { "branch": "master", "commit": "b8ef2d0bde98645250a8997393aefba38e8c6ff3" },
+  "fzf-lua": { "branch": "main", "commit": "1bba731df46feb1751dca1632268aae41ed5ac15" },
   "gruvbox-material": { "branch": "master", "commit": "3fff63b0d6a425ad1076a260cd4f6da61d1632b1" },
   "lazy.nvim": { "branch": "main", "commit": "3ad55ae678876516156cca2f361c51f7952a924b" },
   "lsp-zero.nvim": { "branch": "v2.x", "commit": "2a9e08d7ac36f2c66d29f987c17eea4a07c049ce" },
+  "mason-lspconfig.nvim": { "branch": "main", "commit": "e86a4c84ff35240639643ffed56ee1c4d55f538e" },
   "mason.nvim": { "branch": "main", "commit": "fe9e34a9ab4d64321cdc3ecab4ea1809239bb73f" },
+  "material.nvim": { "branch": "main", "commit": "1ecaa2d065a1ea308bd7702a77c2bf35ede8f536" },
+  "miasma.nvim": { "branch": "main", "commit": "4ce99c39433b745d869f61373c3cc1b176e9a096" },
+  "nvcode-color-schemes.vim": { "branch": "master", "commit": "3a0e624a67ecd2c7f990bc3c25a1044e85782b10" },
   "nvim-cmp": { "branch": "main", "commit": "c4e491a87eeacf0408902c32f031d802c7eafce8" },
   "nvim-lspconfig": { "branch": "master", "commit": "b6091272422bb0fbd729f7f5d17a56d37499c54f" },
-  "nvim-treesitter": { "branch": "master", "commit": "6aababfca4e3d72cb1e8fbbdac4115a5f88107d0" },
+  "nvim-treesitter": { "branch": "master", "commit": "205b9e9bb88240a4192e0a2372b72b593724965f" },
   "nvim-web-devicons": { "branch": "master", "commit": "efbfed0567ef4bfac3ce630524a0f6c8451c5534" },
   "sonokai": { "branch": "master", "commit": "a9b2a3e83ed4fa7a5541e41be9becaa7b436edcf" },
-  "utf8.nvim": { "branch": "main", "commit": "954cbbadabe5cd19f202e918fec191d64eea7766" }
+  "utf8.nvim": { "branch": "main", "commit": "954cbbadabe5cd19f202e918fec191d64eea7766" },
+  "vscode.nvim": { "branch": "main", "commit": "05973862f95f85dd0564338a03baf61b56e1823f" },
+  "workspaces.nvim": { "branch": "master", "commit": "c8bd98990d322b107e58ff5373038b753a8ef66d" }
 }

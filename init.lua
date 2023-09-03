@@ -1,12 +1,14 @@
 -- Bootstrap the lazy package manager
 vim.opt.rtp:prepend(vim.fn.stdpath("data") .. "/lazy/lazy.nvim")
 require('lazy').setup({
-		{ 'nvim-tree/nvim-web-devicons', dependencies = { 
-			'uga-rosa/utf8.nvim' 
-		}, config = require('setup.devicons') },
-		{ 'nvim-treesitter/nvim-treesitter' },
+		{ 'nvim-tree/nvim-web-devicons', dependencies = { 'uga-rosa/utf8.nvim' }, config = require('config.devicons') },
+		{ 'nvim-treesitter/nvim-treesitter', config = require('config.treesitter') },
+    { 'ibhagwan/fzf-lua', config = require('config.fzf') },
 
 		--[[ LSP Plugins ]]
+    { 'williamboman/mason.nvim', dependencies = {
+      'williamboman/mason-lspconfig.nvim'
+    }, config = require('config.mason') },
     { 'VonHeikemen/lsp-zero.nvim', dependencies = {
 			'neovim/nvim-lspconfig',
 			'hrsh7th/nvim-cmp',
@@ -14,8 +16,7 @@ require('lazy').setup({
       'hrsh7th/cmp-buffer',
       'hrsh7th/cmp-path',
       { 'L3MON4D3/LuaSnip', build = 'make install_jsregexp' },
-      { 'williamboman/mason.nvim', config = require('setup.mason') },
-    }, config = require('setup.lspzero') },
+    }, config = require('config.lspzero') },
 
     --[[ Colorscheme plugins ]]
     'sainnhe/gruvbox-material',
@@ -26,21 +27,7 @@ require('lazy').setup({
     'marko-cerovac/material.nvim',
     'ChristianChiarulli/nvcode-color-schemes.vim',
     'xero/miasma.nvim',
-	}, {
-    install = {
-      -- install missing plugins on startup. This doesn't increase startup time.
-      missing = true,
-      -- try to load one of these colorschemes when starting an installation during startup
-      colorscheme = { "habamax" },
-    },
-    ui = {
-      border = 'none',
-      icons = {
-
-      },
-
-    }
-  })
+	}, require('config.lazy'))
 
 -- Nvim extras
 vim.opt.number = true
@@ -49,7 +36,7 @@ vim.opt.mouse = 'a'
 
 -- Configure the colorschemes on nvim
 vim.opt.termguicolors = true
-vim.cmd 'colorscheme slate'
+vim.cmd 'colorscheme material-darker'
 
 -- Indentation config
 vim.opt.tabstop = 2
