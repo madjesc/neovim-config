@@ -1,13 +1,15 @@
 -- Bootstrap the lazy package manager
 vim.opt.rtp:prepend(vim.fn.stdpath("data") .. "/lazy/lazy.nvim")
 require('lazy').setup({
-    { 'nvim-tree/nvim-web-devicons',     dependencies = { 'uga-rosa/utf8.nvim' }, config = require('config.devicons') },
+    { 'nvim-tree/nvim-web-devicons',     dependencies = { 'uga-rosa/utf8.nvim' },    config = require('config.devicons') },
     { 'nvim-treesitter/nvim-treesitter', config = require('config.treesitter') },
-    { 'nvim-telescope/telescope.nvim', dependencies = { 'nvim-lua/plenary.nvim' }, config = require('config.telescope') },
+    { 'nvim-telescope/telescope.nvim',   dependencies = { 'nvim-lua/plenary.nvim' }, config = require('config.telescope') },
+    { 'lewis6991/gitsigns.nvim', config = require('config.gitsigns') },
+    -- { 'f-person/git-blame.nvim',         config = require('config.blame') },
 
 
     -- { 'ibhagwan/fzf-lua',                config = require('config.fzf') },
-    { 'nvim-tree/nvim-tree.lua', config = require('config.nvim-tree') },
+    { 'nvim-tree/nvim-tree.lua',         config = require('config.nvim-tree') },
 
     --[[ LSP Plugins ]]
     {
@@ -36,6 +38,7 @@ require('lazy').setup({
     'marko-cerovac/material.nvim',
     'ChristianChiarulli/nvcode-color-schemes.vim',
     'xero/miasma.nvim',
+---@diagnostic disable-next-line: different-requires
 }, require('config.lazy'))
 
 -- Nvim extras
@@ -46,9 +49,12 @@ vim.opt.foldmethod = 'indent'
 
 -- Configure the colorschemes on nvim
 vim.opt.termguicolors = true
-vim.cmd 'colorscheme nvcode'
+vim.cmd 'colorscheme xoria'
 
 -- Indentation config
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
+
+-- ???
+vim.cmd "hi default link gitblame WinSeparator"
