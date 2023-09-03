@@ -6,16 +6,14 @@ return function()
   lzero.on_attach(function(client, bufnr)
     -- see :help lsp-zero-keybindings
     -- to learn the available actions
-    lzero.default_keymaps({buffer = bufnr})
-    utils.map('n', 'gq', function ()
-      vim.lsp.buf.format({async = false, timeout_ms = 10000})
+    lzero.default_keymaps({ buffer = bufnr })
+    utils.map('n', 'gq', function()
+      vim.lsp.buf.format({ async = false, timeout_ms = 10000 })
     end)
     utils.map('n', 'g?', vim.lsp.buf.code_action)
   end)
 
   lsp.lua_ls.setup(lzero.nvim_lua_ls())
-  -- lsp.phpactor.setup({})
-  -- lsp.psalm.setup({})
   lzero.setup()
 
   local cmp = require('cmp')
@@ -32,7 +30,7 @@ return function()
     },
     mapping = {
       -- `Enter` key to confirm completion
-      ['<CR>'] = cmp.mapping.confirm({select = false}),
+      ['<CR>'] = cmp.mapping.confirm({ select = false }),
       ['<C-j>'] = cmp.mapping.scroll_docs(-4),
       ['<C-k>'] = cmp.mapping.scroll_docs(4),
 
@@ -50,4 +48,3 @@ return function()
     })
   })
 end
-

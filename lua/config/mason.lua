@@ -13,12 +13,9 @@ return function()
     }
   })
   require("mason-lspconfig").setup()
-  -- require("mason-lspconfig").setup_handlers {
-  --     function (server_name)
-  --         require("lspconfig")[server_name].setup {}
-  --     end,
-  --     ['lua_ls'] = function ()
-  --       lsp.lua_ls.setup(lzero.nvim_lua_ls())
-  --     end
-  -- }
+
+  require("mason-lspconfig").setup_handlers {
+      ['lua_ls'] = require('config.lua_ls'),
+      ['phpactor'] = require('config.phpactor')
+  }
 end
