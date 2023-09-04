@@ -8,6 +8,16 @@ return function()
       color = "#FFB13B",
       name = "Svg"
     },
+    ["log"] = {
+      icon = icon("log"),
+      color = "#31B53E",
+      name = "Log"
+    },
+    ["commit_editmsg"] = {
+      icon = icon("git-commit"),
+      color = "#F14C28",
+      name = "GitLogo"
+    },
     ["git"] = {
       icon = icon("git-commit"),
       color = "#F14C28",
@@ -22,6 +32,11 @@ return function()
       icon = icon("gear"),
       color = "#41535b",
       name = "GitConfig"
+    },
+    [".editorconfig"] = {
+      icon = icon("gear"),
+      color = "#41535b",
+      name = "EditorConfig"
     },
     [".gitignore"] = {
       icon = icon("git-commit"),
@@ -48,6 +63,11 @@ return function()
       color = "#89e051",
       name = "Zshrc"
     },
+    ["docker-compose.yml"] = {
+      icon = icon("docker"),
+      color = "#384d54",
+      name = "Dockerfile"
+    },
     ["Dockerfile"] = {
       icon = icon("docker"),
       color = "#384d54",
@@ -62,6 +82,16 @@ return function()
       icon = icon("file-badge"),
       color = "#d0bf41",
       name = "License"
+    },
+    [".bash_profile"] = {
+      icon = icon("terminal"),
+      color = "#89e051",
+      name = "Bash"
+    },
+    [".zprofile"] = {
+      icon = icon("terminal"),
+      color = "#89e051",
+      name = "Bash"
     },
     ["bash"] = {
       icon = icon("terminal"),
