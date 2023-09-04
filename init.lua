@@ -53,7 +53,7 @@ vim.opt.foldmethod = 'indent'
 
 -- Configure the colorschemes on nvim
 vim.opt.termguicolors = true
-vim.cmd 'colorscheme xoria'
+vim.cmd 'colorscheme gruvbox-material'
 
 -- Indentation config
 vim.opt.tabstop = 4
