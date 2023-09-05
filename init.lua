@@ -1,19 +1,17 @@
 -- Bootstrap the lazy package manager
 vim.opt.rtp:prepend(vim.fn.stdpath("data") .. "/lazy/lazy.nvim")
 require('lazy').setup({
-    { 'nvim-tree/nvim-web-devicons',     dependencies = { 'uga-rosa/utf8.nvim' }, config = require('config.devicons') },
+    {
+        'nvim-tree/nvim-web-devicons',
+        dependencies = { 'uga-rosa/utf8.nvim' },
+        config = require('config.devicons')
+    },
     { 'nvim-treesitter/nvim-treesitter', config = require('config.treesitter') },
     { 'ibhagwan/fzf-lua',                config = require('config.fzf') },
     { 'lewis6991/gitsigns.nvim',         config = require('config.gitsigns') },
     { 'nvim-tree/nvim-tree.lua',         config = require('config.nvim-tree') },
-    {
-        "kristijanhusak/vim-dadbod-ui",
-        dependencies = {
-            "tpope/vim-dadbod",
-            "kristijanhusak/vim-dadbod-completion",
-        },
-        config = require('config.dadbod')
-    },
+    { 'xiyaowong/virtcolumn.nvim',       config = require('config.virtcolumn') },
+    -- { 'nvim-treesitter/nvim-treesitter-context', config = require('config.ts_context') },
 
     --[[ LSP Plugins ]]
     {
@@ -35,13 +33,6 @@ require('lazy').setup({
 
     --[[ Colorscheme plugins ]]
     'sainnhe/gruvbox-material',
-    'sainnhe/everforest',
-    'sainnhe/sonokai',
-    'sainnhe/edge',
-    'Mofiqul/vscode.nvim',
-    'marko-cerovac/material.nvim',
-    'ChristianChiarulli/nvcode-color-schemes.vim',
-    'xero/miasma.nvim',
     ---@diagnostic disable-next-line: different-requires
 }, require('config.lazy'))
 
@@ -57,8 +48,6 @@ vim.cmd 'colorscheme gruvbox-material'
 
 -- Indentation config
 vim.opt.tabstop = 4
+vim.opt.colorcolumn = '80'
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
-
--- ???
-vim.cmd "hi default link gitblame WinSeparator"
