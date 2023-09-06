@@ -9,6 +9,7 @@ return function()
   lsp.phpactor.setup(require('config.lsp.phpactor'))
   lsp.cssls.setup {}
   lsp.jsonls.setup {}
+  lsp.jdtls.setup(require('config.lsp.jdlts'))
 
   utils.map('n', '<Leader>e', vim.diagnostic.open_float)
   utils.map('n', '[d', vim.diagnostic.goto_prev)

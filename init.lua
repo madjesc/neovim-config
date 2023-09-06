@@ -10,8 +10,6 @@ require('lazy').setup({
     { 'ibhagwan/fzf-lua',                config = require('config.fzf') },
     { 'lewis6991/gitsigns.nvim',         config = require('config.gitsigns') },
     { 'nvim-tree/nvim-tree.lua',         config = require('config.nvim-tree') },
-    { 'xiyaowong/virtcolumn.nvim',       config = require('config.virtcolumn') },
-    -- { 'nvim-treesitter/nvim-treesitter-context', config = require('config.ts_context') },
 
     --[[ LSP Plugins ]]
     {
@@ -48,6 +46,6 @@ vim.cmd 'colorscheme gruvbox-material'
 
 -- Indentation config
 vim.opt.tabstop = 4
-vim.opt.colorcolumn = '80'
+-- vim.opt.colorcolumn = '80'
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
