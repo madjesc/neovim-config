@@ -1,4 +1,3 @@
-local utf8 = require('utf8');
 local icons = {
   ["alert"] = 61697,
   ["angular"] = 61698,
@@ -358,5 +357,5 @@ local icons = {
 
 -- Get the icon as a utf8 string
 return function(name)
-	return utf8.char(icons[name])
+	return vim.fn.nr2char(icons[name])
 end
