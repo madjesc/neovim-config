@@ -45,6 +45,7 @@ local override_names = {
 
 	-- Others
 	["eslint"] = { ".eslintrc" },
+	["file-binary"] = { "exe", ".exe", ".out", "out", "binary" },
 	["file-code"] = { "xml", "svg" },
 	["vim"] = { "vim", ".gvimrc", ".vimrc", "_gvimrc", "_vimrc" },
 	["terminal"] = { "terminal", "bash", "zsh" },
