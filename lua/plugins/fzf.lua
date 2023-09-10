@@ -4,7 +4,7 @@ return {
         fzf_bin = "sk",
         fzf_opts = { ["--no-separator"] = false },
     },
-    config = function (_, opts)
+    config = function(_, opts)
         local fzf = require("fzf-lua")
         fzf.setup(opts)
         vim.keymap.set('n', '<Leader>f', fzf.files)
@@ -12,5 +12,3 @@ return {
         vim.keymap.set('n', '<Leader>b', fzf.buffers)
     end
 }
-
-

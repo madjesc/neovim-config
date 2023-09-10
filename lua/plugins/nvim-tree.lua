@@ -1,4 +1,4 @@
-local icon = require('nonicons')
+local icon = require('devicons')
 
 return {
     'nvim-tree/nvim-tree.lua',
@@ -76,7 +76,6 @@ return {
         vim.keymap.set('n', '<C-b>', ':NvimTreeToggle<CR>')
     end,
 }
-
 
 
 

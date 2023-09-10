@@ -16,3 +16,4 @@ vim.opt.expandtab = true
 -- Another options
 vim.opt.mouse = 'a'
 
+require('commands')

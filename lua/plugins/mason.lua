@@ -1,31 +1,34 @@
-local icons = require('nonicons')
+local icons = require('devicons')
 
-
-function check_nvim(client)
+-- TODO: Improve this part of the source
+function Check_nvim(client)
     local path = client.workspace_folders[1].name
-    if not vim.loop.fs_stat(path..'/.luarc.json') and not vim.loop.fs_stat(path..'/.luarc.jsonc') then
-      client.config.settings = vim.tbl_deep_extend('force', client.config.settings, {
-        Lua = {
-          runtime = {
-            version = 'LuaJIT'
-          },
-          workspace = {
-            checkThirdParty = false,
-            library = {
-              vim.env.VIMRUNTIME
+    if not vim.loop.fs_stat(path .. '/.luarc.json') and not vim.loop.fs_stat(path .. '/.luarc.jsonc') then
+        client.config.settings = vim.tbl_deep_extend('force', client.config.settings, {
+            Lua = {
+                runtime = {
+                    version = 'LuaJIT'
+                },
+                workspace = {
+                    checkThirdParty = false,
+                    library = {
+                        vim.env.VIMRUNTIME
+                    }
+                }
             }
-          }
-        }
-      })
+        })
 
-      client.notify("workspace/didChangeConfiguration", { settings = client.config.settings })
+        client.notify("workspace/didChangeConfiguration", { settings = client.config.settings })
     end
     return true
 end
 
 return {
     'williamboman/mason.nvim',
-    dependencies = { 'williamboman/mason-lspconfig.nvim', 'neovim/nvim-lspconfig' },
+    dependencies = {
+        'williamboman/mason-lspconfig.nvim',
+        'neovim/nvim-lspconfig',
+    },
     opts = {
         ui = {
             icons = {
@@ -44,9 +47,9 @@ return {
                 function(server)
                     require('lspconfig')[server].setup {}
                 end,
-                ['lua_ls'] = function (server)
-                    local lsp = require('lspconfig')[server].setup({
-                        on_init = check_nvim
+                ['lua_ls'] = function(server)
+                    require('lspconfig')[server].setup({
+                        on_init = Check_nvim
                     })
                 end
             }
